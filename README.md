@@ -1,8 +1,8 @@
-#Ruby on Rails Tutorial: sample application
+This is a web application created by ZHAO Liyao and Yung-Hsien Chu.
 
-This is the sample application for
-the [*Ruby on Rails Tutorial*](http://railstutorail.org/)
-by [Michael Hartl](http://michaelhartl.com/)
+Name: Schedule Share
+Function: 1. Create customized schedule for users;
+		  2. Social functions based on schedule share;
 
-Please feel free to use a different markup language if you do not plan to run
+
 <tt>rake doc:app</tt>.
