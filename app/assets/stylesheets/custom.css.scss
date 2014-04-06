@@ -38,3 +38,42 @@ footer ul li a
 }
 
 /*header style*/
+header
+{
+	width: 100%;
+	background-color: #aabbcc;
+	height: 60px;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+header div
+{
+	float: left;
+	margin-top: 20px;
+}
+
+header ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header ul li 
+{
+	display: block;
+	float: right;
+	width: 100px;
+	border: 2px solid #aabbcc;
+	text-align: center;
+	margin-top: 20px;
+}
+
+header ul li a 
+{
+	text-decoration: none;
+}
+
+/*body style*/
