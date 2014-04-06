@@ -37,6 +37,16 @@ footer ul li a
 	text-decoration: none;
 }
 
+footer ul li a:link, a:visited
+{
+	color: white;
+}
+
+footer ul li a:hover, a:active
+{
+	color: black;
+}
+
 /*header style*/
 header
 {
@@ -74,6 +84,16 @@ header ul li
 header ul li a 
 {
 	text-decoration: none;
+}
+
+header ul li a:link, a:visited
+{
+	color: white;
+}
+
+header ul li a:hover, a:active
+{
+	color: black;
 }
 
 /*body style*/
@@ -126,8 +146,12 @@ html, body
 	vertical-align: middle;
 	font-weight: bold;
 }
-.signButton a :link, :visited
+.signButton a:link, a:visited
 {
 	color: white;
+}
+.signButton a:hover, a:active
+{
+	color: green;
 }
 
