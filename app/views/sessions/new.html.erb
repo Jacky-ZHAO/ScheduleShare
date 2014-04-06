@@ -1,16 +1,15 @@
 <% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
-
-<div>
-   <div>
+<div class="row">
+   <div class="span4 offset1" id="signup">
+    <h1 class="signupHeading">Sign in</h1><br><br>
         <%= form_tag sessions_path, :method => 'post' do %>
-          <%= label_tag 'email', 'Email' %>
-          <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
-          <%= label_tag 'password', 'Password' %>
+          <%= label_tag 'email', 'Email' , class:"label"%><br>
+          <%= text_field_tag :email, params[:email], :placeholder => "example@email.com" %><br>
+          <%= label_tag 'password', 'Password', class:"label" %><br>
           <%= password_field_tag :password %>
-          <br>
-          <%= submit_tag "Sign in" %>
+          <br><br>
+          <%= submit_tag "Sign in", class: "button" %>
        <% end %>
-       <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+       <p class="newUserLink">New user? <%= link_to "Sign up now!", signup_path %></p>
     </div>
 </div>

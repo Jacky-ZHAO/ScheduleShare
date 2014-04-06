@@ -230,3 +230,28 @@ body
 .button:hover {
     background: #CF7A7A
 }
+
+/*sign in style*/
+.newUserLink a
+{
+	color: black;
+	text-decoration: none;
+}
+.newUserLink a:link
+{
+	color: black;
+}
+.newUserLink a:visited
+{
+	color: black;
+}
+.newUserLink a:hover
+{
+	color: blue;
+	font-style: italic;
+}
+.newUserLink a:active
+{
+	color: blue;
+	font-style: italic;
+}
