@@ -5,22 +5,24 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
       <%= f.label :name, class:"label" %><br>
-      <%= f.text_field :name , placeholder: "Your Full Name"%><br>
+      <%= f.text_field :name , placeholder: "Your Full Name"%><span>*</span><br>
 
       <%= f.label :email, class:"label" %><br>
-      <%= f.text_field :email, placeholder: "Valid Email Address" %><br>
+      <%= f.text_field :email, placeholder: "Valid Email Address" %><span>*</span><br>
 	  
-	  <%= f.label :address, class:"label" %><br>
+	   <%= f.label :address, class:"label" %><br>
       <%= f.text_field :address, placeholder: " Valid Address" %><br>
 	  
-	  <%= f.label :birthday, class:"label" %><br>
+	    <%= f.label :birthday, class:"label" %><br>
       <%= f.text_field :birthday, placeholder: " Birthday" %><br>
 
       <%= f.label :password, class:"label" %><br>
-      <%= f.password_field :password, placeholder:"Secure Password" %><br>
+      <%= f.password_field :password, placeholder:"Secure Password" %><span>*</span><br>
 
       <%= f.label :password_confirmation, "Confirmation", class:"label" %><br>
-      <%= f.password_field :password_confirmation, placeholder:"Repeat Your Password" %>
+      <%= f.password_field :password_confirmation, placeholder:"Repeat Your Password" %><span>*</span>
+      <br><br>
+      <span style="font-size:0.8em;font-style:italic;">(*): Required Field</span>
       <br><br>
       <%= f.submit "GO", class: "button" %>
     <% end %>
