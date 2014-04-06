@@ -77,7 +77,7 @@ describe User do
     end
   end
   
-  describe "when birthday format is invalid" do
+  describe "when birthday range is invalid" do
     it "should be invalid" do
       birthdays = %w[1899-12-12 1940-20-20 2100-01-30]
       birthdays.each do |invalid_birthday|
