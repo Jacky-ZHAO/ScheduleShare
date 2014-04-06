@@ -1,9 +1,11 @@
+@import "bootstrap";
+
 /*footer style*/
 footer
 {
 	width: 100%;
-	background-color: #aabbcc;
-	height: 60px;
+	border-top: 2px solid white;
+	height: 30px;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -12,7 +14,10 @@ footer
 footer div
 {
 	float: left;
-	margin-top: 20px;
+	margin-top: 5px;
+	margin-left: 20px;
+	font-style: italic;
+	color: white;
 }
 
 footer ul
@@ -24,17 +29,17 @@ footer ul
 
 footer ul li 
 {
-	display: block;
-	float: right;
-	width: 100px;
-	border: 2px solid #aabbcc;
 	text-align: center;
-	margin-top: 20px;
+	line-height: 30px;
+	vertical-align: middle;
 }
 
 footer ul li a 
 {
 	text-decoration: none;
+	display: block;
+	float: right;
+	width: 100px;
 }
 
 footer ul li a:link, a:visited
@@ -51,8 +56,8 @@ footer ul li a:hover, a:active
 header
 {
 	width: 100%;
-	background-color: #aabbcc;
-	height: 60px;
+	background-color: rgba(200,0,100,0.4);
+	height: 30px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -61,7 +66,24 @@ header
 header div
 {
 	float: left;
-	margin-top: 20px;
+	margin-top: 5px;
+	margin-left: 20px;
+	font-weight: bold;
+	font-family: Broadway;
+	font-size: 1.8em;
+}
+
+header div a:link, a:visited
+{
+	color: white;
+	text-decoration: none;
+}
+
+header div a:hover, a:active
+{
+	color: white;
+	text-decoration: underline;
+	background-color: transparent;
 }
 
 header ul
@@ -73,17 +95,19 @@ header ul
 
 header ul li 
 {
-	display: block;
-	float: right;
-	width: 100px;
-	border: 2px solid #aabbcc;
 	text-align: center;
-	margin-top: 20px;
+	line-height: 30px;
+	vertical-align: middle;
 }
 
 header ul li a 
 {
 	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	display: block;
+	float: right;
+	width: 100px;
 }
 
 header ul li a:link, a:visited
@@ -93,7 +117,8 @@ header ul li a:link, a:visited
 
 header ul li a:hover, a:active
 {
-	color: black;
+	background-color: rgba(255,0,0,0.6);
+	text-decoration: none;
 }
 
 /*body style*/
@@ -106,36 +131,54 @@ html, body
 	overflow: hidden;
 }
 
+body
+{
+	background-image: url("http://d1r5i20o8cadcu.cloudfront.net/designs/images/655/original/main.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 /*container style*/
 .container
 {
-	width: 70%;
-	margin: auto;
-	margin-top: 60px;
-	background-color: rgba(80,80,80,0.5);
+	margin-top: 60px;	
 	height: 100%;
+	width: 100%;
 }
 
 /*home style*/
 #home
 {
+	margin-top: 20px;
+	margin-left: 20px;
 	text-align: center;
+	background-color: rgba(80,80,80,0.5);
+	float: left;
+	width: 40%;
+	height: 70%;
 }
 
 #home h1
 {
-	font-size: 5em;
+	font-size: 7em;
 	line-height: 200%;
 	vertical-align: middle;
+	font-family: "Freestyle Script";
+	color: #555555;
+	letter-spacing: 120%;
+	text-shadow: 10px 10px 10px #ffffaa;
 }
 
 .signButton
 {
-	background-color: #aa0000;
+	background-color: rgba(255,0,0,0.6);
 	border-radius: 40px;
-	width: 30%;
+	width: 60%;
 	height: 4em;
 	margin: auto;
+	margin-top: 100px;
 }
 
 .signButton a 
@@ -150,8 +193,10 @@ html, body
 {
 	color: white;
 }
-.signButton a:hover, a:active
+.signButton a:hover
 {
-	color: green;
+	color: white;
+	text-shadow: 0 0 5px white;
+	background-color: transparent;
 }
 
