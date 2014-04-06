@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password
+  VALID_BIRTHDAY_REGEX = /\A(19|20)\d\d([\-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])/i
+  validates :birthday, format: { with: VALID_BIRTHDAY_REGEX }
   validates :password, length: { minimum: 6 }
 
   def User.new_remember_token

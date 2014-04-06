@@ -77,6 +77,26 @@ describe User do
     end
   end
   
+  describe "when birthday format is invalid" do
+    it "should be invalid" do
+      birthdays = %w[1899-12-12 1940-20-20 2100-01-30]
+      birthdays.each do |invalid_birthday|
+        @user.birthday = invalid_birthday
+        expect(@user).not_to be_valid
+      end
+    end
+  end
+  
+  describe "birthday format is valid" do
+    it "should be valid" do
+	  birthdays = %w[1900-10-12 1984-11-12 1999-1-2]
+	  birthdays.each do |valid_birthday|
+	    @user.birthday = valid_birthday
+		expect(@user).to be_valid
+	  end
+	end
+  end
+  
   describe "when password is not present" do
     before do
       @user = User.new(name: "Example User", email: "user@example.com",
