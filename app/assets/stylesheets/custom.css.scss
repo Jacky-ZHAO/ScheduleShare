@@ -4,7 +4,7 @@
 footer
 {
 	width: 100%;
-	border-top: 2px solid white;
+	border-top: 2px solid black;
 	height: 30px;
 	position: fixed;
 	bottom: 0;
@@ -17,39 +17,41 @@ footer div
 	margin-top: 5px;
 	margin-left: 20px;
 	font-style: italic;
-	color: white;
+	color: black;
 }
 
-footer ul
+.footer
 {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
 
-footer ul li 
+.footer li 
 {
 	text-align: center;
 	line-height: 30px;
 	vertical-align: middle;
 }
 
-footer ul li a 
+.footer li a 
 {
 	text-decoration: none;
 	display: block;
 	float: right;
 	width: 100px;
+	color: black;
 }
 
-footer ul li a:link, a:visited
-{
-	color: white;
-}
-
-footer ul li a:hover, a:active
+.footer li a:link,a:visited
 {
 	color: black;
+}
+
+.footer li a:hover
+{
+	color: black;
+	text-decoration: underline;
 }
 
 /*header style*/
@@ -63,7 +65,7 @@ header
 	left: 0;
 }
 
-header div
+.header-div
 {
 	float: left;
 	margin-top: 5px;
@@ -73,34 +75,34 @@ header div
 	font-size: 1.8em;
 }
 
-header div a:link, a:visited
+.header-div li a:link, a:visited
 {
 	color: white;
 	text-decoration: none;
 }
 
-header div a:hover, a:active
+.header-div a:hover, a:active
 {
 	color: white;
 	text-decoration: underline;
 	background-color: transparent;
 }
 
-header ul
+.header-ul
 {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
 
-header ul li 
+.header-ul li 
 {
 	text-align: center;
 	line-height: 30px;
 	vertical-align: middle;
 }
 
-header ul li a 
+.header-ul li a 
 {
 	text-decoration: none;
 	color: white;
@@ -110,12 +112,12 @@ header ul li a
 	width: 100px;
 }
 
-header ul li a:link, a:visited
+.header-ul li a:link, a:visited
 {
 	color: white;
 }
 
-header ul li a:hover, a:active
+.header-ul li a:hover, a:active
 {
 	background-color: rgba(255,0,0,0.6);
 	text-decoration: none;
@@ -133,11 +135,12 @@ html, body
 
 body
 {
-	background-image: url("http://d1r5i20o8cadcu.cloudfront.net/designs/images/655/original/main.jpg");
+	/*background-image: url("http://d1r5i20o8cadcu.cloudfront.net/designs/images/655/original/main.jpg");*/
+  	background-image:  url("http://d1r5i20o8cadcu.cloudfront.net/designs/images/655/original/main.jpg"),
+  	url("http://www.pageresource.com/wallpapers/wallpaper/crumpled-white-paper-texture-melemel-jpeg_260159.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 /*container style*/
