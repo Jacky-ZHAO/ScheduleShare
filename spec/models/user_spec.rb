@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: "Example User", email: "user@example.com", address: "100 Badgers", birthday: "2000/02/01",
+    @user = User.new(name: "Example User", email: "user@example.com", address: "100 Badgers", birthday: "2000-02-01",
                      password: "foobar", password_confirmation: "foobar")
   end
 
@@ -79,7 +79,7 @@ describe User do
   
   describe "when birthday range is invalid" do
     it "should be invalid" do
-      birthdays = %w[1899-12-12 1940-20-20 2100-01-30]
+      birthdays = %w[1899-12-12 2100-01-30]
       birthdays.each do |invalid_birthday|
         @user.birthday = invalid_birthday
         expect(@user).not_to be_valid
