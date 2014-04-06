@@ -100,7 +100,7 @@ header
 	text-align: center;
 	line-height: 30px;
 	vertical-align: middle;
-	position: relative;
+	/*position: relative;*/
 }
 
 .header-ul li a 
@@ -281,3 +281,33 @@ body
 	background-color: transparent;
 }
 
+/*profile style*/
+#show 
+{
+	border: 1px solid blue;
+	background-image: url("http://fc09.deviantart.net/fs70/i/2013/327/1/1/torn_paper_texture___free_for_personal_use_by_moonlight4ngel-d3afz55.png");
+	background-attachment: fixed;
+	/*background-size: ;*/
+	background-repeat: no-repeat;
+}
+.gravatar 
+{
+	font-family: "Times New Roman";
+	color: white;
+	margin-left: 5px;
+}
+
+.profileTable
+{
+	border: 0;
+	border-collapse: collapse;
+}
+.profileTable td
+{
+	height: 70px;
+	width: 200px;
+	font-family: arial;
+	font-size: 1.6em;
+	padding: 5px;
+	color: white;
+}

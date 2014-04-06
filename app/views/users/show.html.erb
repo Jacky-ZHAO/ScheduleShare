@@ -1,14 +1,27 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4">
+  <aside class="span6 offset1" id="show">
     <section>
-      <h1>
+      <h1 class="gravatar">
         <%= gravatar_for @user %>
         <%= @user.name %>
-		<%= @user.email %>
-		<%= @user.birthday %>
-		<%= @user.address %>
       </h1>
+      <div>
+        <table class="profileTable">
+          <tr>
+            <td>Email:</td>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <td>Birthday:</td>
+            <td><%= @user.birthday %></td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td><%= @user.address %></td>
+          </tr>
+        </table>
+      </div>
     </section>
   </aside>
 </div>
