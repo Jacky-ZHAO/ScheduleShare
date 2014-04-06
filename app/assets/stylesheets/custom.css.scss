@@ -92,7 +92,7 @@ html, body
 	width: 70%;
 	margin: auto;
 	margin-top: 60px;
-	background-color: #aaaa00;
+	background-color: rgba(80,80,80,0.5);
 	height: 100%;
 }
 
@@ -109,8 +109,25 @@ html, body
 	vertical-align: middle;
 }
 
-#home a 
+.signButton
+{
+	background-color: #aa0000;
+	border-radius: 40px;
+	width: 30%;
+	height: 4em;
+	margin: auto;
+}
+
+.signButton a 
 {
 	text-decoration: none;
 	font-size: 2em;
+	line-height: 2em;
+	vertical-align: middle;
+	font-weight: bold;
 }
+.signButton a :link, :visited
+{
+	color: white;
+}
+
