@@ -1,7 +1,7 @@
 <% provide(:title, 'Sign up') %>
 <div class="row">
   <div class="span4 offset1" id="signup">
-    <h1 class="signupHeading">Sign up</h1><br><br>
+    <h1 class="signupHeading">Sign up</h1><br>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
       <%= f.label :name, class:"label" %><br>
@@ -21,9 +21,9 @@
 
       <%= f.label :password_confirmation, "Confirmation", class:"label" %><br>
       <%= f.password_field :password_confirmation, placeholder:"Repeat Your Password" %><span>*</span>
-      <br><br>
+      <br>
       <span style="font-size:0.8em;font-style:italic;">(*): Required Field</span>
-      <br><br>
+      <br>
       <%= f.submit "GO", class: "button" %>
     <% end %>
   </div>
