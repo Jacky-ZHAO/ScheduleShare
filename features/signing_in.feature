@@ -10,4 +10,3 @@ Feature: Signing in
       And the user has an account
     When the user submits valid signin information
     Then they should see their profile page
-      And they should see a signout link

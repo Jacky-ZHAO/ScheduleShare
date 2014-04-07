@@ -24,7 +24,3 @@ end
 Then /^they should see their profile page$/ do
   expect(page).to have_title(@user.name)
 end
-
-Then /^they should see a signout link$/ do
-  expect(page).to have_link('Sign out', href: signout_path)
-end
