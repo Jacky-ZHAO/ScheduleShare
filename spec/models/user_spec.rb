@@ -18,6 +18,7 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:events) }
 
   it { should be_valid }
 
@@ -134,5 +135,29 @@ describe User do
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
+  end
+  
+  describe "event associations" do
+
+    before { @user.save }
+    let!(:less_recent_event) do
+      FactoryGirl.create(:event, user: @user, created_at: 1.day.ago)
+    end
+    let!(:most_recent_event) do
+      FactoryGirl.create(:event, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right events in the right order" do
+      expect(@user.events.to_a).to eq [most_recent_event, less_recent_event]
+    end
+	
+	it "should destroy associated events" do
+      events = @user.events.to_a
+      @user.destroy
+      expect(events).not_to be_empty
+      events.each do |event|
+        expect(Event.where(id: event.id)).to be_empty
+      end
+    end
   end
 end
