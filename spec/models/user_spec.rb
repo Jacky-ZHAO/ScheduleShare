@@ -19,6 +19,7 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:events) }
+  it { should respond_to(:feed) }
   it { should respond_to(:admin) }
 
   it { should be_valid }
@@ -170,6 +171,16 @@ describe User do
       events.each do |event|
         expect(Event.where(id: event.id)).to be_empty
       end
+    end
+    
+    describe "status" do
+      let(:unfollowed_event) do
+        FactoryGirl.create(:event, user: FactoryGirl.create(:user))
+      end
+
+      its(:feed) { should include(most_recent_event) }
+      its(:feed) { should include(less_recent_event) }
+      its(:feed) { should_not include(unfollowed_event) }
     end
   end
 end

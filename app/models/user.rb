@@ -18,6 +18,11 @@ class User < ActiveRecord::Base
   def User.hash(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+  
+  def feed
+    # This is preliminary. See "Following users" for the full implementation.
+    Event.where("user_id = ?", id)
+  end
 
   private
 
