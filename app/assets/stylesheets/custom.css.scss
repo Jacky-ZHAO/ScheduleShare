@@ -1,62 +1,48 @@
 @import "bootstrap";
 
 /*footer style*/
-footer
-{
+footer{
 	width: 100%;
 	border-top: 2px solid black;
 	height: 30px;
 	position: fixed;
 	bottom: 0;
 	left: 0;
-}
-
-footer div
-{
+	div{
 	float: left;
 	margin-top: 5px;
 	margin-left: 20px;
 	font-style: italic;
 	color: black;
+	}
 }
 
-.footer
-{
+.footer{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-}
-
-.footer li 
-{
+	li{
 	text-align: center;
 	line-height: 30px;
 	vertical-align: middle;
-}
-
-.footer li a 
-{
-	text-decoration: none;
-	display: block;
-	float: right;
-	width: 100px;
-	color: black;
-}
-
-.footer li a:link,a:visited
-{
-	color: black;
-}
-
-.footer li a:hover
-{
-	color: black;
-	text-decoration: underline;
+		a {
+			text-decoration: none;
+			display: block;
+			float: right;
+			width: 100px;
+			color: black;
+			&:link{
+				color:black;
+			}
+			&:visited{
+				color:black;
+			}
+		}
+	}
 }
 
 /*header style*/
-header
-{
+header{
 	width: 100%;
 	background-color: rgba(200,0,100,0.4);
 	height: 30px;
@@ -65,83 +51,64 @@ header
 	left: 0;
 }
 
-.header-div
-{
+.header-div{
 	float: left;
 	margin-top: 5px;
 	margin-left: 20px;
 	font-weight: bold;
 	font-family: Broadway;
 	font-size: 1.8em;
-}
-
-.header-div li a:link, a:visited
-{
-	color: white;
-	text-decoration: none;
-}
-
-.header-div a:hover, a:active
-{
-	color: white;
-	text-decoration: underline;
-	background-color: transparent;
-}
-
-.header-ul
-{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-.header-ul li 
-{
-	text-align: center;
-	line-height: 30px;
-	vertical-align: middle;
-	/*position: relative;*/
-}
-
-.header-ul li a 
-{
-	text-decoration: none;
-	color: white;
-	font-weight: bold;
-	display: block;
-	float: right;
-	width: 100px;
-}
-
-.header-ul li a:link, a:visited
-{
-	color: white;
-}
-
-.header-ul li a:hover, a:active
-{
-	background-color: rgba(255,0,0,0.6);
-	text-decoration: none;
+	a:link, a:visited{
+		color: white;
+		text-decoration: none;
+	}
+	a:hover, a:active{
+		text-decoration: underline;
+		background-color: transparent;
+	}
 }
 
 /*drop down style*/
-.header-ul li ul
-{
+.header-ul{
 	list-style-type: none;
-	display: none;
-	position: absolute;
-	right: 200px;
-	top: 30px;
-}
+	margin: 0;
+	padding: 0;
+	li {
+		text-align: center;
+		line-height: 30px;
+		vertical-align: middle;
+		a{
+			text-decoration: none;
+			color: white;
+			font-weight: bold;
+			display: block;
+			float: right;
+			width: 100px;
+			&:visited{
+				color:white;
+			}
+			&:hover{
+				background-color: rgba(255,0,0,0.6);
+				text-decoration: none;
+			}
+		}
+		ul{
+			list-style-type: none;
+			display: none;
+			position: absolute;
+			right: 200px;
+			top: 30px;
+			a{
+				background-color: rgba(200,0,100,0.4);
+			}
+		}
 
-.header-ul li ul li a 
-{
-	background-color: rgba(200,0,100,0.4);
-}
-.header-ul li:hover ul
-{
-	display: block;
-	/*position: relative;*/
+		&:hover{
+			ul{
+				display: block;
+			}
+		}
+	}
 }
 
 /*body style*/
