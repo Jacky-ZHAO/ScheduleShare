@@ -6,8 +6,8 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
-    let!(:e1) { FactoryGirl.create(:event, user: user, description: "Project discussion 1", title: "First Meeting") }
-    let!(:e2) { FactoryGirl.create(:event, user: user, description: "Project discussion 2", title: "Second Meeting") }
+    let!(:m1) { FactoryGirl.create(:event, user: user, description: "Project discussion 1", title: "First Meeting") }
+    let!(:m2) { FactoryGirl.create(:event, user: user, description: "Project discussion 2", title: "Second Meeting") }
 	
     before { visit user_path(user) }
 
@@ -15,8 +15,8 @@ describe "User pages" do
     it { should have_title(user.name) }
 	
     describe "events" do
-      it { should have_content(m1.event) }
-      it { should have_content(m2.event) }
+      it { should have_content(m1.description) }
+      it { should have_content(m2.description) }
       it { should have_content(user.events.count) }
     end
   end
