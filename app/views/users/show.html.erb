@@ -114,14 +114,9 @@
             if (cells[i].innerHTML === ''){
               if (!titles[j]) break;
               cells[i].innerHTML = titles[j];
+              cells[i].onmouseover = (function(p){ return function() {this.innerHTML = description[p];};})(j);
+              cells[i].onmouseout = (function(p) { return function() {this.innerHTML = titles[p];};})(j);
               j++;
-            }
-          }
-          for (var n=0; n<cells.length;n++){
-            if ((n>5)&&(n%6!=0)){
-              for (var l=0; cells[n].innerHTML != titles[l]; l++);
-              cells[n].onmouseover = (function(p){ return function() {this.innerHTML = description[p];};})(l);
-              cells[n].onmouseout = (function(p) { return function() {this.innerHTML = titles[p];};})(l);
             }
           }
         }
