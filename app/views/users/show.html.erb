@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4 offset1" id="show">
+  <aside class="span4" id="show">
     <section>
       <h1 class="gravatar">
         <%= gravatar_for @user %>
@@ -24,6 +24,7 @@
       </div>
     </section>
   </aside>
+
   <div class="span12">
     <% if @user.events.any? %>
       <h3>Events (<%= @user.events.count %>)</h3>
@@ -122,10 +123,6 @@
         }
         addEvents();
       </script>
-<!--       <ol class="events">
-        <%= render @events %>
-      </ol>
-      <%= will_paginate @events %> -->
     <% end %>
   </div>
 </div>

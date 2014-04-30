@@ -1,11 +1,17 @@
 <%= form_for(@event) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
+  <div class="span3" id = 'signup' style="margin-top:0;">
+	  <h1 class="gravatar">
+		<%= link_to gravatar_for(current_user, size: 52), current_user %>
+	  	<%= current_user.name %>
+	  </h1>
+  	<%= link_to "view my profile", current_user %>&nbsp;&nbsp;
+  	<%= pluralize(current_user.events.count, "event") %><br><br>
     <%= f.text_area :title, placeholder: "Event title" %>
 	<%= f.text_area :venue, placeholder: "Event location" %>
 	<%= f.text_area :description, placeholder: "Event description" %>
 	<%= f.text_area :people, placeholder: "Event participants" %>
-	<%= f.datetime_local_field :time, placeholder: "Event time" %>
+	<%= f.datetime_local_field :time, placeholder: "Event time" %><br><br>
+	<%= f.submit "Add Event", class: "button" %>
   </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
