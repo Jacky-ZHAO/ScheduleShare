@@ -1,8 +1,13 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
 
+<<<<<<< HEAD
 <div class="row">
   <div class="span6 offset3" id = "signup">
+=======
+<div class="row" >
+  <div class="span4 offset1" id = 'signup'>
+  <h1 class="signupHeading">Sign up</h1><br>
+>>>>>>> cb7ff8087def41a4c79cb3bdbe1dd49398c0281c
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :name, class:"label" %><br>

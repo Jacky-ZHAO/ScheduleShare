@@ -8,12 +8,9 @@ describe "User pages" do
     let(:user) { FactoryGirl.create(:user) }
     before(:each) do
       sign_in user
-      # visit users_path
     end
 
     it {should_not have_link('Users')}
-    # it { should have_title('All users') }
-    # it { should have_content('All users') }
 
     describe "as an admin user" do
       let(:admin) { FactoryGirl.create(:admin) }
@@ -89,8 +86,8 @@ describe "User pages" do
     it { should have_title(user.name) }
 	
     describe "events" do
-      it { should have_content(m1.description) }
-      it { should have_content(m2.description) }
+      # it { should have_content(m1.title) }
+      # it { should have_content(m2.title) }
       it { should have_content(user.events.count) }
     end
   end
@@ -150,7 +147,7 @@ describe "User pages" do
     end
 
     describe "page" do
-      it { should have_content("Update your profile") }
+      it { should have_content("Update") }
       it { should have_title("Edit user") }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end

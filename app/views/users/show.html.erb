@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span6 offset1" id="show">
+  <aside class="span4" id="show">
     <section>
       <h1 class="gravatar">
         <%= gravatar_for @user %>
@@ -24,13 +24,107 @@
       </div>
     </section>
   </aside>
-  <div class="span8">
+
+  <div class="span12">
     <% if @user.events.any? %>
       <h3>Events (<%= @user.events.count %>)</h3>
-      <ol class="events">
-        <%= render @events %>
-      </ol>
-      <%= will_paginate @events %>
+      
+      <table id='schedule'>
+        <thead>
+          <tr>
+            <td></td>
+            <td>Monday</td>
+            <td>Tuesday</td>
+            <td>Wednesday</td>
+            <td>Thursday</td>
+            <td>Friday</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8am-10am</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>10am-12pm</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>12pm-2pm</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2pm-4pm</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>4pm-6pm</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>6pm-8pm</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <script type = 'text/javascript'>
+        function addEvents(){
+          var schedule = document.getElementById('schedule');
+          var eventsNumber = '<%= @user.events.count %>';
+          var events = '<%= @user.events.to_json %>';
+          var titles = [];
+          var description = [];
+          for (var a = 0, m = 0; a<events.length; a++){
+            if (events.substring(a,a+11) == 'description'){
+              for (var b = a+15; events.substring(b+4,b+10) != 'people';b++);
+              description[m] = events.substring(a+24,b-9);
+            }
+            if (events.substring(a,a+5) == 'title'){
+              for (var c = a+9; events.substring(c,c+7) != 'created';c++);
+              titles[m] = events.substring(a+18,c-13);
+              m++;
+            }
+          }
+          var cells = schedule.getElementsByTagName('td');
+          for (var i = 1, j=0; i< cells.length; i++ ){
+            if (cells[i].innerHTML === ''){
+              if (!titles[j]) break;
+              cells[i].innerHTML = titles[j];
+              cells[i].onmouseover = (function(p){ return function() {this.innerHTML = description[p];};})(j);
+              cells[i].onmouseout = (function(p) { return function() {this.innerHTML = titles[p];};})(j);
+              j++;
+            }
+          }
+        }
+        addEvents();
+      </script>
     <% end %>
   </div>
 </div>
+
+

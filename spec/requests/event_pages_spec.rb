@@ -13,11 +13,11 @@ describe "Event pages" do
     describe "with invalid information" do
 
       it "should not create a event" do
-        expect { click_button "Post" }.not_to change(Event, :count)
+        expect { click_button "Add" }.not_to change(Event, :count)
       end
 
       describe "error messages" do
-        before { click_button "Post" }
+        before { click_button "Add" }
         it { should have_content('error') }
       end
     end
@@ -27,7 +27,7 @@ describe "Event pages" do
 	 before { fill_in 'event_title', with: "Meeting 1" }
       before { fill_in 'event_description', with: "Lorem ipsum" }
       it "should create a event" do
-        expect { click_button "Post" }.to change(Event, :count).by(1)
+        expect { click_button "Add" }.to change(Event, :count).by(1)
       end
     end
   end
