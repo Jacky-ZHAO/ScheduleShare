@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   before_action :signed_in_user, only: [:create, :destroy, :edit, :update]
   before_action :correct_user,   only: [:edit, :destroy, :update]
-
   
   def show
 	@event = Event.find(params[:id])
