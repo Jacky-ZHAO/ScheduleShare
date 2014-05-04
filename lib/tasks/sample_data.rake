@@ -21,7 +21,8 @@ namespace :db do
     50.times do
       description = Faker::Lorem.sentence(5)
 	  title = Faker::Name.title
-      users.each { |user| user.events.create!(description: description, title: title) }
+	  time = rand(-10.years..10.years).seconds.ago
+      users.each { |user| user.events.create!(description: description, title: title, time: time) }
     end
   end
 end
