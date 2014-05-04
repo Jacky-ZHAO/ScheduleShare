@@ -3,15 +3,33 @@
   <span class="user">
     <%= link_to feed_item.user.name, feed_item.user %>
   </span>
-  <% if current_user?(feed_item.user) %>
-    <span style="position:relative;left:700px;"> <%= link_to "delete", feed_item, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: feed_item.title %> </span>
-  <% end %>
   <br>
-  <span class="title"><%= feed_item.title %> /// </span>
+  <span class="title" onclick = "menu('<%= feed_item.id %>menu');" onmouseleave = "disapear('<%= feed_item.id %>menu');">
+    <%= feed_item.title %>
+    <% if current_user?(feed_item.user) %>
+    <span id = '<%= feed_item.id %>menuIcon' class ='menuIcon'>▷</span>
+    <span id ="<%= feed_item.id %>menu" class="menu">
+    <%= link_to "delete", feed_item, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: feed_item.title %>
+    <a href="#">edit</a>
+    </span>
+    <% end %>
+  </span>
+  <br><br>
   <span class="description"><%= feed_item.description %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
   </span>
 </li>
+
+  <script type="text/javascript">
+    function disapear(id){
+      document.getElementById('<%= feed_item.id %>menuIcon').style.display = 'none';
+      document.getElementById(id).style.display = 'none';
+    }
+    function menu(id){
+      document.getElementById('<%= feed_item.id %>menuIcon').style.display = 'inline-block';
+      document.getElementById(id).style.display = 'inline-block';
+    }
+  </script>
