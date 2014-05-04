@@ -32,6 +32,37 @@ describe "Event pages" do
     end
   end
   
+  describe "edit" do
+    let(:event){FactoryGirl.create(:event, user: user)}
+    before do
+      visit edit_event_path(event)
+    end
+
+    describe "page" do
+      it { should have_content("Update") }
+      it { should have_title("Edit event") }
+    end
+
+    describe "with valid information" do
+      let(:new_title)  { "New Title" }
+      let(:new_description) { "Test Description" }
+	 let(:new_venue)  { "New Location" }
+	 let(:new_time)  { rand(-10.years..10.years).seconds.ago }
+      before do
+        fill_in "Title",             with: new_title
+        fill_in "Description",            with: new_description
+        fill_in "Venue",         with: new_venue
+        fill_in "Time", with: new_time
+        click_button "Save changes"
+      end
+
+      it { should have_title(new_title) }
+      it { should have_selector('div.alert.alert-success') }
+      specify { expect(event.reload.title).to  eq new_title }
+      specify { expect(event.reload.description).to eq new_description }
+    end
+  end
+  
   describe "event destruction" do
     before { FactoryGirl.create(:event, user: user) }
 
