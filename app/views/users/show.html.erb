@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4" id="show">
+  <aside class="span3" id="show">
     <section>
       <h1 class="gravatar">
         <%= gravatar_for @user %>
@@ -8,24 +8,19 @@
       </h1>
       <div>
         <table class="profileTable">
-          <tr>
-            <td>Email:</td>
-            <td><%= @user.email %></td>
-          </tr>
-          <tr>
-            <td>Birthday:</td>
-            <td><%= @user.birthday %></td>
-          </tr>
-          <tr>
-            <td>Address:</td>
-            <td><%= @user.address %></td>
-          </tr>
+          <tr><td>Email:</td></tr>
+          <tr><td><%= @user.email %></td></tr>
+          <tr><td>Birthday:</td></tr>
+          <tr><td><%= @user.birthday %></td></tr>
+          <tr><td>Address:</td></tr>
+          <tr><td><%= @user.address %></td></tr>
         </table>
       </div>
     </section>
   </aside>
-
-  <div class="span12">
+  <div id='eventView'><span id='eventView1'>Event Title</span>
+  <br><br><span id='eventView2'>Description</span></div>
+  <div class="span12 offset4">
     <% if @user.events.any? %>
       <h3>Events (<%= @user.events.count %>)</h3>
       
@@ -42,53 +37,365 @@
         </thead>
         <tbody>
           <tr>
-            <td>8am-10am</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td rowspan="2">0 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
           </tr>
           <tr>
-            <td>10am-12pm</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
           </tr>
           <tr>
-            <td>12pm-2pm</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td rowspan="2">1 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
           </tr>
           <tr>
-            <td>2pm-4pm</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
           </tr>
           <tr>
-            <td>4pm-6pm</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td rowspan="2">2 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
           </tr>
           <tr>
-            <td>6pm-8pm</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
           </tr>
+          <tr>
+            <td rowspan="2">3 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">4 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">5 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">6 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">7 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">8 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">9 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">10 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">11 AM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">12 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">1 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">2 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">3 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">4 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">5 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">6 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">7 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">8 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">9 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">10 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td rowspan="2">11 PM</td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>
+          <tr>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+          </tr>  
         </tbody>
       </table>
 
@@ -110,11 +417,15 @@
               m++;
             }
           }
-          var cells = schedule.getElementsByTagName('td');
-          for (var i = 1, j=0; i< cells.length; i++ ){
+          var cells = schedule.getElementsByTagName('div');
+          var view1 = document.getElementById('eventView1');
+          var view2 = document.getElementById('eventView2');
+          for (var i = 0, j=0; i< cells.length; i++ ){
             if (cells[i].innerHTML === ''){
               if (!titles[j]) break;
               cells[i].innerHTML = titles[j];
+              cells[i].onclick = (function(p){ return function() 
+                {view1.innerHTML = titles[p];view2.innerHTML = description[p];};})(j);
               cells[i].onmouseover = (function(p){ return function() {this.innerHTML = description[p];};})(j);
               cells[i].onmouseout = (function(p) { return function() {this.innerHTML = titles[p];};})(j);
               j++;
