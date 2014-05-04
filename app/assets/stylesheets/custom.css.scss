@@ -351,16 +351,22 @@ body
 	font-weight: bolder;
 }
 
+.list{
+	&:hover{
+		background-color:rgba(240,240,240,0.6);
+		.menuIcon{
+			display: inline-block;
+		}
+	}
+}
+
 .title{
 	font-weight:bold;
 	cursor: pointer;
 /*	display: block;
 	width: 100%;*/
 	&:hover{
-		background-color:rgb(240,240,240);
-		.menuIcon{
-			display: inline-block;
-		}
+		background-color:transparent;
 	}
 }
 

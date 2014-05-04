@@ -1,10 +1,10 @@
-<li id="<%= feed_item.id %>">
+<li id="<%= feed_item.id %>" onmouseleave = "disapear('<%= feed_item.id %>menu');" class='list'>
   <%= link_to gravatar_for(feed_item.user), feed_item.user %>
   <span class="user">
     <%= link_to feed_item.user.name, feed_item.user %>
   </span>
   <br>
-  <span class="title" onclick = "menu('<%= feed_item.id %>menu');" onmouseleave = "disapear('<%= feed_item.id %>menu');">
+  <span class="title" onclick = "menu('<%= feed_item.id %>menu');">
     <%= feed_item.title %>
     <% if current_user?(feed_item.user) %>
     <span id = '<%= feed_item.id %>menuIcon' class ='menuIcon'>▷</span>
@@ -25,11 +25,11 @@
 
   <script type="text/javascript">
     function disapear(id){
-      document.getElementById('<%= feed_item.id %>menuIcon').style.display = 'none';
+      // document.getElementById('<%= feed_item.id %>menuIcon').style.display = 'none';
       document.getElementById(id).style.display = 'none';
     }
     function menu(id){
-      document.getElementById('<%= feed_item.id %>menuIcon').style.display = 'inline-block';
+      // document.getElementById('<%= feed_item.id %>menuIcon').style.display = 'inline-block';
       document.getElementById(id).style.display = 'inline-block';
     }
   </script>
