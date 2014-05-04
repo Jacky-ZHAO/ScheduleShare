@@ -1,0 +1,30 @@
+<% provide(:title, @event.title) %>
+<div class="row">
+  <aside class="span4" id="show">
+    <section>
+      <div>
+        <table class="profileTable">
+          <tr>
+            <td>Title:</td>
+            <td><%= @event.title %></td>
+          </tr>
+          <tr>
+            <td>Description:</td>
+            <td><%= @event.description %></td>
+          </tr>
+          <tr>
+            <td>Time:</td>
+            <td><%= @event.time %></td>
+          </tr>
+		  <tr>
+            <td>Location:</td>
+            <td><%= @event.venue %></td>
+          </tr>
+        </table>
+		<% link_to "edit", @event, method: :edit %>
+      </div>
+    </section>
+  </aside>
+</div>
+
+
