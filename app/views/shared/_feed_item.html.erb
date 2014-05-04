@@ -17,8 +17,9 @@
     <% end %>
   </span>
   <br><br>
-  <span class="description"><%= feed_item.description %></span>
-  <span class="timestamp">
+  <span class="description"><%= feed_item.description %></span><br>
+  <span>@<%= feed_item.time %></span>
+  <span class="timestamp" style='float:right;font-size:0.7em'>
     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
   </span>
 </li>

@@ -308,6 +308,7 @@ body
     overflow: auto;
     padding: 10px 0;
     &:hover{
+    	background-color:rgba(200,200,255,0.6);
     	span{
     		display: inline-block;
     	}
@@ -416,4 +417,8 @@ body
 @-webkit-keyframes expand{
 	from {opacity: 0;}
 	to {opacity: 1;}
+}
+
+.editEvent{
+	margin-top: 0;
 }

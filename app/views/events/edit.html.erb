@@ -1,22 +1,23 @@
 <% provide(:title, "Edit event") %>
 
 <div class="row">
-  <div class="span3" id = 'signup' style="margin-top:0;">
+  <div class="span4 offset1" id = 'signup' class="editEvent">
     <h1 class="signupHeading">Update</h1><br><br>
     <%= form_for(@event) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :title, class:"label" %><br>
-      <%= f.text_field :title %><br>
+      <%= f.text_field :title, style:"width:280px" %><br>
 
       <%= f.label :description, class:"label" %><br>
-      <%= f.text_area :description, :rows => 10 %><br>
+
+      <%= f.text_area :description, style:"width:280px" %><br>
 
       <%= f.label :venue, class:"label" %><br>
-      <%= f.text_field :venue %><br>
+      <%= f.text_field :venue, style:"width:280px" %><br>
 	  
 	  <%= f.label :time, class:"label" %><br>
-      <%= f.datetime_local_field :time %><br>
+      <%= f.datetime_local_field :time, style:"width:280px" %><br><br>
 
       <%= f.submit "Save changes" ,class: "button"%>
     <% end %>
