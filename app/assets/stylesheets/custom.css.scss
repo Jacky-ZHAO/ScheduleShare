@@ -486,4 +486,11 @@ body
 	line-height: 30px;
 	vertical-align: middle;
 	cursor: pointer;
+	}
+	
+.f{
+	position: fixed;
+	top:160px;
+	left:60px;
+	z-index:100;
 }

@@ -25,5 +25,12 @@ namespace :db do
 	  venue = Faker::Address.street_address(include_secondary = true) + ", " + Faker::Address.city + ", " + Faker::Address.country + ", " + Faker::Address.zip_code
       users.each { |user| user.events.create!(description: description, title: title, time: time, venue: venue) }
     end
+	
+	users = User.all
+    user  = users.first
+    followed_users = users[2..50]
+    followers      = users[3..40]
+    followed_users.each { |followed| user.follow!(followed) }
+    followers.each      { |follower| follower.follow!(user) }
   end
 end
