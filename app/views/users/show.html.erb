@@ -23,6 +23,20 @@
   <span id='eventView3'>Date</span><br>
   <span id='eventView4'>Time</span></div>
   <div class="span12 offset4">
+    <div>
+      <span id='currentWeek'></span>
+      <script type="text/javascript">
+      function currentWeek(){
+        var date = new Date();
+        var day = date.getDay();
+        var d = date.getDate();
+        var m = date.getMonth()+1;
+        var dayName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        document.getElementById('currentWeek').innerHTML = m+'.'+d+'&nbsp&nbsp&nbsp&nbsp&nbsp'+dayName[day];
+      }
+      currentWeek();
+      </script>
+    </div>
     <% if @user.events.any? %>
       <h3>Events (<%= @user.events.count %>)</h3>
       
@@ -550,20 +564,6 @@
           var view2 = document.getElementById('eventView2');
           var view3 = document.getElementById('eventView3');
           var view4 = document.getElementById('eventView4');
-          // for (var i = 0, j=0; i< cells.length; i++ ){
-          //   if (cells[i].innerHTML === ''){
-          //     if (!titles[j]) break;
-          //     cells[i].innerHTML = titles[j];
-          //     cells[i].onclick = (function(p){ return function() 
-          //       {view1.innerHTML = titles[p];
-          //        view2.innerHTML = description[p];
-          //        view3.innerHTML = date[p];
-          //        view4.innerHTML = time[p];};})(j);
-          //     cells[i].onmouseover = (function(p){ return function() {this.innerHTML = description[p];};})(j);
-          //     cells[i].onmouseout = (function(p) { return function() {this.innerHTML = titles[p];};})(j);
-          //     j++;
-          //   }
-          // }
 
           for(var j=0;j<titles.length;j++){
             if (cells[cellNumber[j]].innerHTML === ''){
@@ -577,7 +577,6 @@
               cells[cellNumber[j]].onmouseout = (function(p) { return function() {this.innerHTML = titles[p];};})(j);
             }
           }
-
         }
         addEvents();
       </script>
