@@ -22,7 +22,8 @@ namespace :db do
       description = Faker::Lorem.sentence(5)
 	  title = Faker::Name.title
 	  time = rand(-10.years..10.years).seconds.ago
-      users.each { |user| user.events.create!(description: description, title: title, time: time) }
+	  venue = Faker::Address.street_address(include_secondary = true) + ", " + Faker::Address.city + ", " + Faker::Address.country + ", " + Faker::Address.zip_code
+      users.each { |user| user.events.create!(description: description, title: title, time: time, venue: venue) }
     end
   end
 end
