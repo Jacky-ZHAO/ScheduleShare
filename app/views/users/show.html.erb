@@ -20,6 +20,7 @@
   </aside>
   <div id='eventView'><span id='eventView1'>Event Title</span>
   <br><br><span id='eventView2'>Description</span><br><br>
+  <span id='eventView5'>Venue</span><br>
   <span id='eventView3'>Date</span><br>
   <span id='eventView4'>Time</span></div>
   <div class="span12 offset4">
@@ -36,6 +37,13 @@
       }
       currentWeek();
       </script>
+    </div>
+    <iframe id = 'map' width="600px" height="450px" frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBjHYmSQtHGl9i7fobhYoU5oG1e0v5S8b8
+        &q=Space Needle,Seattle WA">
+    </iframe>
+    <div id='mapClose' onclick="closeMap();">
+      X
     </div>
     <% if @user.events.any? %>
       <h3>Events (<%= @user.events.count %>)</h3>
@@ -514,6 +522,11 @@
       </table>
 
       <script type = 'text/javascript'>
+        function closeMap(){
+          document.getElementById('map').style.display = 'none';
+          document.getElementById('mapClose').style.display = 'none';
+        }
+
         function getCellNumber(date,time){
             var year = parseInt(date.substring(0,4));
             var month = parseInt(date.substring(5,7));
@@ -539,10 +552,16 @@
           var time = [];
           var cellNumber = [];
           var day = [];
+          var venue = [];
           for (var a = 0, m = 0; a<events.length; a++){
             if(events.substring(a,a+4) == 'time'){
               date[m] = events.substring(a+17,a+27);
               time[m] = events.substring(a+28,a+36);
+              // venue[m] = events.substring(a+40,a+60);
+            }
+            if(events.substring(a,a+5) == 'venue'){
+              for (var b=a+17;events.substring(b,b+11)!='description';b++)
+              venue[m] = events.substring(a+18,b-12);
             }
             if (events.substring(a,a+11) == 'description'){
               for (var b = a+15; events.substring(b+4,b+10) != 'people';b++);
@@ -564,6 +583,11 @@
           var view2 = document.getElementById('eventView2');
           var view3 = document.getElementById('eventView3');
           var view4 = document.getElementById('eventView4');
+          var view5 = document.getElementById('eventView5');
+          var map = document.getElementById('map');
+          var mapClose = document.getElementById('mapClose');
+          var w = screen.width;
+          var h = screen.height;
 
           for(var j=0;j<titles.length;j++){
             if (cells[cellNumber[j]].innerHTML === ''){
@@ -572,7 +596,29 @@
                 {view1.innerHTML = titles[p];
                  view2.innerHTML = description[p];
                  view3.innerHTML = date[p];
-                 view4.innerHTML = time[p]};})(j);
+                 view4.innerHTML = time[p];
+                 view5.innerHTML = venue[p];
+                 map.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBjHYmSQtHGl9i7fobhYoU5oG1e0v5S8b8&q="+venue[p];
+                 if (window.event.clientX+600 > w) {
+                  map.style.left =(w-630)+'px';
+                  mapClose.style.left = (w-630-30)+'px';
+                }
+                 else {
+                  map.style.left = window.event.clientX + 'px';
+                  mapClose.style.left = (window.event.clientX - 30) + 'px';
+                }
+                 if (window.event.clientY+450 > h) {
+                  map.style.top = (h-580) +'px';
+                  mapClose.style.top = (h-580) +'px';
+                }
+                 else {
+                  map.style.top = window.event.clientY +'px';
+                  mapClose.style.top = window.event.clientY+ 'px';
+                }
+                 map.style.display = 'block';
+                 mapClose.style.display = 'block';                 
+               };
+               })(j);
               cells[cellNumber[j]].onmouseover = (function(p){ return function() {this.innerHTML = description[p];};})(j);
               cells[cellNumber[j]].onmouseout = (function(p) { return function() {this.innerHTML = titles[p];};})(j);
             }

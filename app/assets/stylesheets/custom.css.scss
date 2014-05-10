@@ -451,3 +451,39 @@ body
 	height:600px;
 	padding:10px;
 }
+
+/*map*/
+#map{
+	display: none;
+	position: fixed;
+	z-index: 100;
+/*	animation: opacity 2s;
+	-webkit-animation: opacity 2s;*/
+/*	top: 40%;
+	left: 30%;*/
+}
+
+/*@keyframes opacity{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+
+@webkit-keyframes opacity{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}*/
+
+#mapClose{
+	display: none;
+	height: 30px;
+	width: 30px;
+	position: fixed;
+	z-index: 101;
+	background-color: rgb(240,240,240);
+	color: rgba(255,0,0,0.8);
+	font-weight: bolder;
+	text-align: center;
+	line-height: 30px;
+	vertical-align: middle;
+	cursor: pointer;
+}
