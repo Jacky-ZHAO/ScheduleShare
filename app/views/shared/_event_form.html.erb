@@ -5,6 +5,7 @@
 	  <h1 class="gravatar">
 		<%= link_to gravatar_for(current_user, size: 52), current_user %>
 	  	<%= current_user.name %>
+		<br><br>
 	  </h1>
   	<%= link_to "view my profile", current_user %>&nbsp;&nbsp;
   	<%= pluralize(current_user.events.count, "event") %><br><br>
