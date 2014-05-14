@@ -2,7 +2,7 @@
 
 <div class="row" >
   <div class="span4 offset1" id = 'signup'>
-  <h1 class="signupHeading">Sign up</h1><br>
+  <h1 class="signupHeading">Sign up</h1>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :name, class:"label" %><br>
@@ -16,6 +16,9 @@
 	  
 	  <%= f.label :birthday, class:"label" %><br>
       <%= f.text_field :birthday, placeholder: "YYYY-MM-DD" %><br>
+	  
+	  <%= f.label :motto, class:"label" %><br>
+      <%= f.text_field :motto, placeholder: "Your Motto" %><br>
 
       <%= f.label :password, class:"label" %><br>
       <%= f.password_field :password, placeholder:"Secure Password" %><span>*</span><br>

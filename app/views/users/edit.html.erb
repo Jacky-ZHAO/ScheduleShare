@@ -1,8 +1,8 @@
 <% provide(:title, "Edit user") %>
 
 <div class="row">
-  <div class="span4 offset1" id="signup">
-    <h1 class="signupHeading">Update</h1><br><br>
+  <div class = "span4 offset1" id = "signup">
+    <h1 class="signupHeading">Update</h1>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
@@ -11,6 +11,15 @@
 
       <%= f.label :email, class:"label" %><br>
       <%= f.text_field :email %><br>
+	  
+	  <%= f.label :motto, class:"label" %><br>
+      <%= f.text_field :motto %><br>
+	  
+	  <%= f.label :address, class:"label" %><br>
+      <%= f.text_field :address %><br>
+	  
+	  <%= f.label :birthday, class:"label" %><br>
+      <%= f.text_field :birthday %><br>
 
       <%= f.label :password, class:"label" %><br>
       <%= f.password_field :password %><br>
