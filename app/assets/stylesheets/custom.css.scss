@@ -208,10 +208,17 @@ body
 {
 	font-size: 2em;
 }
-.signupHeading
+#eventform
 {
-	font: 25px Georgia, "Times New Roman", Times, serif;
-    color: #888;
+	border: 5px outset grey;
+	box-shadow: 10px 10px 5px white;
+	padding: 20px;
+	margin-top: 50px;
+	position:fixed;
+	top: 30px;
+	background-color: rgba(255,255,255,0.8);
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #888;
 }
 
 .button {
